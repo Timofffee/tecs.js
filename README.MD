@@ -7,8 +7,6 @@
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-- [API Reference](#api-reference)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
