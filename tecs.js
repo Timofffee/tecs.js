@@ -17,6 +17,8 @@ export class Chain {
      */
     push(system) {
         this.systems.push(system);
+        
+        return this;
     }
 
     /**
@@ -44,8 +46,9 @@ export class Component {
      * Create a new Component instance.
      * @param {string} name - The name of the component.
      */
-    constructor(name) {
+    constructor(name, options = {}) {
         this.name = name;
+        Object.assign(this, options);
     }
 }
 
@@ -104,9 +107,13 @@ export class System {
     /**
      * Create a new System instance.
      * @param {string} name - The name of the system.
+     * @param {function} executor - The function to be executed by the system.
      */
-    constructor(name) {
+    constructor(name, executor) {
         this.name = name;
+        if (executor != null) {
+            this.execute = executor;
+        }
     }
 
     /**
@@ -114,7 +121,9 @@ export class System {
      * @param {World} world - The world on which the system operates.
      */
     execute(world) {
-        console.log("Empty `execute()` in " + this.name + "(" + world.name + ")");
+        console.log(
+            "Empty `execute()` in " + this.name + "(" + world.name + ")"
+        );
     }
 }
 
@@ -148,6 +157,18 @@ export class World {
         const entity = new Entity(id);
         this.entities.add(entity);
         return entity;
+    }
+
+    addEntity(entity) {
+        let id = 0;
+        if (this.freeEntities.size > 0) {
+            id = this.freeEntities.values().next().value;
+            this.freeEntities.delete(id);
+        } else {
+            id = this.entityIterator++;
+        }
+        entity.id = id;
+        this.entities.add(entity);
     }
 
     /**

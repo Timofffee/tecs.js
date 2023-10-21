@@ -21,6 +21,7 @@ const system2 = new System("System2");
 system2.execute = (world) => {
     world.query(["Component1", "Component2"], (entity) => {
         console.log("Update Entity " + entity.id);
+        return true;
     });
 };
 chain.push(system2);
@@ -37,6 +38,7 @@ system3.execute = (world) => {
         if (entity.getComponent("Component2").value === 8) {
             entity.deleteComponent("Component2");
         }
+        return true;
     });
 };
 chain.push(system3);
