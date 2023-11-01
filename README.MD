@@ -20,14 +20,19 @@ To get started with **tecs.js**, you can follow these steps:
 
 1. **Get library:**
 
-   Just download `tecs.js ` file to your project
+   Download `tecs.js` library from [release page](https://github.com/Timofffee/tecs.js/releases).
 
 2. **Include the Library:**
 
    To use **tecs.js** in your project, include the `tecs.js` file in your HTML:
 
    ```html
-   <script type="module" src="tecs.js"></script>
+   <!-- Standard version -->
+   <script src="tecs.js"></script>
+   <!-- Minify version -->
+   <script src="tecs.min.js"></script>
+   <!-- For ES Module -->
+   <script type="module" src="tecs.esm.js"></script>
    ```
 
 3. **Create Your Game Logic:**
@@ -43,6 +48,9 @@ To get started with **tecs.js**, you can follow these steps:
 Here's a brief example of how to use **tecs.js**:
 
 ```javascript
+// Use as ES Module
+import {World, System, Chain, Component} from "./tecs.esm.js"
+
 // Create a new world
 const myWorld = new World("My Game World");
 
