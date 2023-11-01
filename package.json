@@ -1,0 +1,22 @@
+{
+    "name": "tecs.js",
+    "version": "1.0.0",
+    "description": "Tiny Entity Component System for JavaScript",
+    "main": "index.js",
+    "scripts": {
+        "clean": "rimraf dist/*",
+        "build": "npm run build:js -s && npm run build:min -s && npm run build:ems",
+        "build:js": "esbuild ./src/index.js --bundle --outfile=./dist/tecs.js",
+        "build:min": "esbuild ./src/index.js --bundle --outfile=./dist/tecs.min.js --minify",
+        "build:ems": "esbuild ./src/index.js --bundle --outfile=./dist/tecs.ems.js --format=esm",
+        "buildExample": "esbuild ./example/scripts/src/main.js --bundle --outfile=./example/scripts/dist/main.min.js --minify",
+        "cleanExample": "rimraf example/scripts/dist/*",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Timofffee",
+    "license": "MIT",
+    "devDependencies": {
+        "rimraf": "^2.2.8",
+        "esbuild": "0.19.5"
+    }
+}

@@ -1,4 +1,4 @@
-import { World, Component, System, Chain } from "../tecs.js";
+import { World, Component, System, Chain } from "../dist/tecs.ems.js";
 
 const world = new World("World");
 
