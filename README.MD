@@ -1,5 +1,7 @@
 # tecs.js
 
+[![npm version](https://badge.fury.io/js/tecs.js.svg)](https://www.npmjs.com/package/tecs.js)
+
 **tecs.js** is a simple JavaScript library for creating a basic Entity-Component-System (ECS) game framework. It allows you to organize and manage game entities, components, systems, and the game world efficiently.
 
 ## Table of Contents
@@ -15,6 +17,23 @@
 The library is damn small (just over 100 lines of clean code) and uses fairly simple and straightforward code.
 
 ## Getting Started
+
+### NPM Package
+
+1. **Get library as packet:**
+
+Add package in your project. 
+```bash
+npm install tecs.js
+```
+
+2. **Use tecs.js in your project**
+
+```js
+import {World, System, Chain, Component} from "tecs.js"
+```
+
+### Manual Install
 
 To get started with **tecs.js**, you can follow these steps:
 
